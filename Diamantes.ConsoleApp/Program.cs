@@ -7,8 +7,17 @@ namespace Diamantes.ConsoleApp
         static void Main(string[] args)
         {
             int numero;
-            Console.WriteLine("Digite um número: ");
-            numero = Convert.ToInt32(Console.ReadLine());
+            while (true)
+            {
+                Console.WriteLine("Digite um número ímpar: ");
+                numero = Convert.ToInt32(Console.ReadLine());
+                if (numero % 2 != 1)
+                {
+                    Console.WriteLine("Número inválido! Tente novamente.");
+                    continue;
+                }
+            }
+           
             int meio = numero / 2 ;
             int direita = meio, esquerda = meio;
 
@@ -22,7 +31,7 @@ namespace Diamantes.ConsoleApp
                     }
                     else
                     {
-                        Console.Write(" ");
+                        Console.Write("y");
                     }
                 }
                 esquerda--;
